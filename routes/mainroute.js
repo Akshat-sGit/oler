@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 const User = require("../model/user");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+
 
 
 const transporter = nodemailer.createTransport({

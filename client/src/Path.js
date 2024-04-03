@@ -1,17 +1,16 @@
-import React, {useState, useEffect } from 'react'
-import axios from 'axios';
-import Modal from './Modal';
-import './css/App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Modal from "./Modal";
+import "./css/App.css";
 
-const Path = ({ graph, src, dest, car, email}) => {
-
+const Path = ({ graph, src, dest, car, email }) => {
   // All the useState Hooks are Here
-  const [call, setCall] = useState(null)
+  const [call, setCall] = useState(null);
   const [booked, setBooked] = useState([false, false, false, false, false]);
   const [msg, setMsg] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
- 
+
   // Dijakstras Algorithm Applied Here
   function calculation(graph, source, destination) {
     // Initialize distances to all nodes as Infinity except the source, which is 0
@@ -69,7 +68,7 @@ const Path = ({ graph, src, dest, car, email}) => {
     }
     path.reverse();
 
-    const pathString = path.join(' -> ');
+    const pathString = path.join(" -> ");
 
     // Return an object containing the shortest path and its distance
     return {
@@ -80,72 +79,79 @@ const Path = ({ graph, src, dest, car, email}) => {
 
   // Submit Button Functioning Here
   const handleSubmit = (graph, src, dest) => {
-    console.log("onClick working")
-    if(call?.distance === 0 || call?.path === ''){
-      alert("Fill the form")
+    console.log("onClick working");
+    if (call?.distance === 0 || call?.path === "") {
+      alert("Fill the form");
       return;
     }
-    setCall(calculation(graph,src,dest));
+    setCall(calculation(graph, src, dest));
     const path = call?.path;
     const time = call?.distance;
-    const price = call?.distance*car;
+    const price = call?.distance * car;
     const message = (
-      <div className='Message' >
+      <div className="Message">
         <div>Shortest ride Path is : {path}</div>
         <div>Minimum time to reach destination is : {time} minutes</div>
         <div>Price for the ride : Rs.{price}</div>
       </div>
-    )
+    );
     setMsg(message);
-  }
+  };
 
   // Book Now Button Functioning Here
   const handleBook = (email, src, dest, car) => {
-    const index = (car/10 - 1);
+    const index = car / 10 - 1;
     var cr = "";
-    if(car === 10){
+    if (car === 10) {
       cr = "Micro";
-    }else if(car === 20){
+    } else if (car === 20) {
       cr = "Mini";
-    }else if(car === 30){
+    } else if (car === 30) {
       cr = "Sedan";
-    }else if(car === 40){
+    } else if (car === 40) {
       cr = "Sedan Prime";
-    }else{
+    } else {
       cr = "SUV";
     }
 
-    if(booked[index] === true){
-      alert(`Sory The Current Ride ${cr} is Booked. Select Any other Ride.. Or wait for ${call?.distance} minuites for the Ride to get free`)
+    if (booked[index] === true) {
+      alert(
+        `Sory The Current Ride ${cr} is Booked. Select Any other Ride.. Or wait for ${call?.distance} minuites for the Ride to get free`
+      );
       return;
     }
 
-    let data ={
-      email:email,
-      source:src,
-      destination:dest,
-      car:cr,
-      time:call?.distance,
-      price:call?.distance*car
-    }
-    axios.post('http://localhost:5001/user_details', data)
-    .then(resp=>{
-      if(resp){
-        setShowModal(true);
-        console.log(resp.data)
-        const newBooked = [...booked]
-        newBooked[index] = true;
-        setBooked(newBooked);
-      }else{
-        alert("Something went wrong")
-      }
-    })
-    .catch(err=>console.log(err))
-    
-  }
+    let data = {
+      email: email,
+      source: src,
+      destination: dest,
+      car: cr,
+      time: call?.distance,
+      price: call?.distance * car,
+    };
+    axios
+      .post("http://localhost:5001/user_details", data)
+      .then((resp) => {
+        if (resp) {
+          setShowModal(true);
+          console.log(resp.data);
+          const newBooked = [...booked];
+          newBooked[index] = true;
+          setBooked(newBooked);
+        } else {
+          alert("Something went wrong");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
-    if (src.trim() !== '' && email.trim() !== '' && dest.trim() !== '' && car !== '') {
+    if (
+      src.trim() !== "" &&
+      email.trim() !== "" &&
+      dest.trim() !== "" &&
+      car !== ""
+    ) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);
@@ -153,32 +159,41 @@ const Path = ({ graph, src, dest, car, email}) => {
   }, [src, dest, car, email]);
 
   const Modalprop = {
-    call : call,
-    src : src,
-    dest : dest,
-    car : car,
-    showModal : showModal,
-    setShowModal : setShowModal
-  }
+    call: call,
+    src: src,
+    dest: dest,
+    car: car,
+    showModal: showModal,
+    setShowModal: setShowModal,
+  };
 
   return (
     <div>
-      <button id='submit' className='btn btn-primary' disabled={!isFormValid} onClick={() => handleSubmit(graph, src, dest)}>Submit</button>
+      <button
+        id="submit"
+        className="btn btn-primary"
+        disabled={!isFormValid}
+        onClick={() => handleSubmit(graph, src, dest)}
+      >
+        Submit
+      </button>
       {msg && (
-        <div>
-          <div className='messages'>
-            {msg}
-          </div>
+        <div className="msg-container">
+          <div className="messages">{msg}</div>
           <div>
-          <button id='booknow' className='btn btn-success' onClick={() => handleBook(email, src, dest, car)}>Book Now</button>
-            {showModal && (
-              <Modal {...Modalprop} ></Modal>
-            )}
+            <button
+              id="booknow"
+              className="btn btn-success"
+              onClick={() => handleBook(email, src, dest, car)}
+            >
+              Book Now
+            </button>
+            {showModal && <Modal {...Modalprop}></Modal>}
           </div>
         </div>
       )}
     </div>
   );
-}
+};
 
-export default Path
+export default Path;

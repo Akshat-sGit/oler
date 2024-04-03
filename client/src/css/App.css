@@ -11,7 +11,6 @@ body {
   background-image: url("../img/car.jpg");
   z-index: -1;
   background-size: cover;
-
 }
 
 .container-form {
@@ -46,7 +45,7 @@ body {
   color: #333;
   border-radius: 20px;
   padding: 4px;
-  margin-top: 8px;
+  margin-top: 8vh;
   width: 100%;
   font-weight: 600;
 }
@@ -152,18 +151,14 @@ input[type="radio"] {
 .Message {
   margin: 7px 20px;
   padding: 15px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Poppins";
   font-size: large;
   color: white;
   background-color: black;
-  border-radius: 1cap;
+  border-radius: 20px;
   border: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  margin-top: 10vh;
-  width: 50%;
-  margin: 0 auto;
-
 }
 
 #submit {
@@ -196,5 +191,23 @@ input[type="radio"] {
 }
 
 #booknow {
-  margin-bottom: 10vh;
+  margin-left: 5vw;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: medium;
+  padding: 8px 40px;
+  background: black;
+  position: relative;
+  border: none;
+  transition: 0.5s;
+}
+
+.msg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -15vh;
+  margin-bottom: auto;
 }
