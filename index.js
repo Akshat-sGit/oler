@@ -53,7 +53,7 @@ app.get("/user_details", (req, res) => {
   } )
 });
 
-// module.exports = mongoose.model("user_details", userSchema);
+
 
 
 mongoose
@@ -64,3 +64,6 @@ mongoose
   });
 
 app.listen(5001, () => console.log("Running on 5001"));
+
+
+module.exports = mongoose.model("user_details", userSchema);
