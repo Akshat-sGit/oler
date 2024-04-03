@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './css/App.css';
 import ShortestPath from './Path';
 import carGraph from './img/graphh.png';
-import carModel from './img/car .png'
-import wheel from './img/wheel.png'
 
 
 function App() {
@@ -43,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <div className="container-form">
 
       
       <div className="author-name">
