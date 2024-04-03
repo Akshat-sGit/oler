@@ -14,6 +14,48 @@ app.use("/", MainRouter);
 const MONGO_URL =
   "mongodb+srv://akshatag107:AKuKImDvuuIhvo3Q@jellybean.swicqr2.mongodb.net/user_details?retryWrites=true&w=majority&appName=JellyBean";
 
+const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  source: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  destination: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  car: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  time: {
+    type: Number,
+  },
+  price: {
+    type: Number,
+  },
+});
+
+const UserModel = mongoose.model("user_details", userSchema);
+
+app.get("/user_details", (req, res) => {
+  UserModel.find({}).then(function(user_details){
+    res.json(user_details);
+  }).catch(function(e){
+    console.log(e);
+  } )
+});
+
+// module.exports = mongoose.model("user_details", userSchema);
+
+
 mongoose
   .connect(MONGO_URL)
   .then(() => console.log("Connected to mongo Successful"))

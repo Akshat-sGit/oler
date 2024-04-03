@@ -19,8 +19,8 @@ route.post("/", (req, res) => {
   let register = new User(req.body);
   register
     .save()
-    .then((docs) => {
-      res.send(`Successfully Booked your Ride : ${docs}`);
+    .then((user_details) => {
+      res.send(`Successfully Booked your Ride : ${user_details}`);
     })
     .catch((err) => {
       res.status(500).send({ error: err.message });
