@@ -1,25 +1,9 @@
-import React, { useState } from "react";
 const express = require("express");
 const route = express.Router();
 const User = require("../model/user");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-const mainroute = () => {
-  const [formState, setState] = useState({}); 
-
-  const config = {
-  username: "akshatag107@gmail.com",
-  password: "74A74BD6026762EBF812F72C50996BCCF0DF",
-  host: "smtp.elasticemail.com",
-  port: 2525,
-  To : 'them@website.com',
-  From : "you@isp.com",
-  Subject : "This is the subject",
-  Body : "And this is the body", 
-  }
-
-};
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
