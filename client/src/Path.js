@@ -128,7 +128,7 @@ const Path = ({ graph, src, dest, car, email}) => {
       time:call?.distance,
       price:call?.distance*car
     }
-    axios.post('http://localhost:5001/', data)
+    axios.post('http://localhost:5001/user_details', data)
     .then(resp=>{
       if(resp){
         setShowModal(true);

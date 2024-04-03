@@ -1,35 +1,33 @@
-
-.modal-container{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 30rem;
-    padding: 2rem 3rem;
-    border-radius: 0.5rem;
-    border-style: dashed;
-    background-color: black;
-    color: white;
-    font-family: 'Poppins';
-    font-size: 1.6rem;
-    display: flex;
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: auto;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  background-color: black;
+  color: white;
+  font-family: "Poppins";
+  font-size: 1.6rem;
 }
 
-.modal-btn{
-    padding: 0.6rem 1.4rem;
-    font-size: 1.4rem;
-    border: none;
-    border-radius: 0.3rem;
-    background: #212121;
-    color: #fff;
-    cursor: pointer;
+.modal-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: #212121;
+  color: #fff;
+  cursor: pointer;
 }
 
-.modal-btn:hover{
-    background-color: #ffffff;
-    color: #212121;
-    border: #000000;
-    border-width: thick;
-    transform: scale(1);
-    transition: all 0.1s;
+.modal-btn:hover {
+  background-color: #ffffff;
+  color: #212121;
+  border: #000000;
+  border-width: thick;
+  transform: scale(1);
+  transition: all 0.1s;
 }
