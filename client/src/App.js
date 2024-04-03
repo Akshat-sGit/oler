@@ -3,7 +3,6 @@ import './css/App.css';
 import ShortestPath from './Path';
 import carGraph from './img/graphh.png';
 
-
 function App() {
 
   // Created The Graph as per the given diagram

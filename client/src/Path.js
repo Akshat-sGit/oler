@@ -91,9 +91,9 @@ const Path = ({ graph, src, dest, car, email}) => {
     const price = call?.distance*car;
     const message = (
       <div className='Message' >
-        <div>Your shortest ride Path is as follows : {path}</div>
-        <div>Your Minimum time Required to reach destination is : {time} minutes</div>
-        <div>The Price for Your Ride will be : Rs.{price}</div>
+        <div>Shortest ride Path is : {path}</div>
+        <div>Minimum time to reach destination is : {time} minutes</div>
+        <div>Price for the ride : Rs.{price}</div>
       </div>
     )
     setMsg(message);

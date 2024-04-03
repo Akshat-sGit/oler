@@ -11,6 +11,7 @@ body {
   background-image: url("../img/car.jpg");
   z-index: -1;
   background-size: cover;
+
 }
 
 .container-form {
@@ -20,6 +21,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin-top: -15vh;
+  margin-bottom: auto;
 }
 
 .App {
@@ -153,11 +155,15 @@ input[type="radio"] {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: large;
   color: white;
-  background-color: #333;
-  border-radius: 20px;
-  border: 2px solid white;
+  background-color: black;
+  border-radius: 1cap;
+  border: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  margin-top: 10vh;
+  width: 50%;
+  margin: 0 auto;
+
 }
 
 #submit {
@@ -187,4 +193,8 @@ input[type="radio"] {
   to {
     transform: rotate(360deg);
   }
+}
+
+#booknow {
+  margin-bottom: 10vh;
 }
