@@ -26,7 +26,7 @@ route.post('/', (req, res) => {
     })
 
     const mailOptions = {
-        from: "gaurav02maheshwari@gmail.com",
+        from: "akshatag107@gmail.com",
         to: req.body.email,
         subject: `New booking from ${req.body.source} to ${req.body.destination}`,
         html: `

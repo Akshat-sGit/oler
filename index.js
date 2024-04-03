@@ -11,9 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/", MainRouter);
 
-const MONGO_URL = "mongodb+srv://akshatag107:AKuKImDvuuIhvo3Q@jellybean.swicqr2.mongodb.net/user_details?retryWrites=true&w=majority&appName=JellyBean";
-
-// AKuKImDvuuIhvo3Q
+const MONGO_URL =
+  "mongodb+srv://akshatag107:AKuKImDvuuIhvo3Q@jellybean.swicqr2.mongodb.net/user_details?retryWrites=true&w=majority&appName=JellyBean";
 
 mongoose
   .connect(MONGO_URL)
@@ -22,4 +21,4 @@ mongoose
     console.log("Error : " + e);
   });
 
-app.listen(5001, () => console.log("Running on 5000"));
+app.listen(5001, () => console.log("Running on 5001"));

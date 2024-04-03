@@ -44,32 +44,18 @@ function App() {
   return (
     <>
       <div className="container">
+
+      
       <div className="author-name">
       
-      <div className="container">
-        <div className="bird-container bird-container--one">
-          <div className="bird bird--one" />
-        </div>
-        <div className="bird-container bird-container--two">
-          <div className="bird bird--two" />
-        </div>
-        <div className="bird-container bird-container--three">
-          <div className="bird bird--three" />
-        </div>
-        <div className="bird-container bird-container--four">
-          <div className="bird bird--four" />
-        </div>
-      </div>
-
       <div className="App">
-      <h1 className="text">Car Book Karo</h1>
+      <h1 className="text">Oler</h1>
       <div className="form-container">
       <img src={carGraph} alt="Car animation" />
       <form className="mx-auto">
         <div className="form-group">
           <label for="exampleInputEmail1">Email Address</label>
           <input type="email" className="form-control" onChange={(e) => {setemail(e.target.value)}} placeholder="Enter email" required/>
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div className="form-group">
           <label for="exampleInputEmail1">Source</label>
@@ -107,15 +93,7 @@ function App() {
     </div>
 
       </div>
-      <div className="road" />
-      <div className="city" />
-      <div className="car">
-        <img src={carModel} alt="Car" className='car-runing' width={'600px'} />
-        <img src={wheel} alt="Wheel" className='wheel first' />
-        <img src={wheel} alt="Wheel" className='wheel back' />
       </div>
-    </div>
-
     </>
   );
 }

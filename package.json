@@ -1,12 +1,12 @@
 {
-  "name": "cab_karo",
+  "name": "oler",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Gaurav Maheshwari",
+  "author": "Akshat Agarwal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",

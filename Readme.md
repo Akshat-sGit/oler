@@ -3,7 +3,7 @@ Created By -
 
 Akshat Agarwal
 
-## 🟢How To Run The Project
+## How To Run The Project
               
 **How To Run The Front-end :**
 
